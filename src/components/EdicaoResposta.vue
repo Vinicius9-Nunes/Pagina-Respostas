@@ -1,6 +1,6 @@
 <template>
   <div class="box">
-    <textarea name="respostaEdicao" cols="110" rows="20" placeholder="Ao clicar em Copiar sua resposta será colada aqui." v-model="textoAlterado"></textarea>
+    <textarea name="respostaEdicao"  :placeholder="placeholder" v-model="textoAlterado"></textarea>
   </div>
 </template>
 
@@ -15,6 +15,11 @@
             required: true
         }
     },
+    data(){
+      return{
+        placeholder: 'Ao clicar em Copiar sua resposta será colada aqui.'
+      }
+    },
     computed:{
         textoAlterado(){
             return this.textoAtual
@@ -27,6 +32,8 @@
 textarea{
     border-radius: 5px;
     padding: 1rem;
-    border: none
+    border: none;
+    width: 50vw;
+    height: 50vh;
 }
 </style>
